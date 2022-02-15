@@ -7,10 +7,9 @@ if __name__=='__main__':
     this_one = "embedding_size"
     this_two = 'learning_rate'
 
-    hyper_results = pd.DataFrame(columns=['model', this_one, this_two, 'recall@10', 'mrr@10', 'ndcg@10', 'hit@10', 'precision@10'])
     hyper_results_line = 0
-
     for num in range(30):
+        hyper_results = pd.DataFrame(columns=['model', this_one, this_two, 'recall@10', 'mrr@10', 'ndcg@10', 'hit@10', 'precision@10'])
         for this_model in ['BPR', 'ConvNCF', 'CDAE', 'DMF', 'GCMC', 'LightGCN', 'LINE', 'MacridVAE', 'MultiVAE',
                            'MultiDAE', 'NeuMF', 'NGCF', 'SpectralCF']:
             read_addr = this_data + "-hyper-results/" + str(num) + this_model + ".result"
